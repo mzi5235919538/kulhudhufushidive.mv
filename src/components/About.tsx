@@ -39,11 +39,10 @@ const About = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="images/backgrounds/BG3.jpg" 
+          src="/images/backgrounds/BG3.jpg" 
           alt="About us background"
           fill
           className="object-cover"
-          unoptimized
         />
       </div>
       

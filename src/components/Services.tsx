@@ -229,11 +229,10 @@ const Services = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="images/backgrounds/BG1.jpg" 
+          src="/images/backgrounds/BG1.jpg" 
           alt="Diving courses background"
           fill
           className="object-cover"
-          unoptimized
         />
       </div>
       
@@ -256,7 +255,7 @@ const Services = () => {
                 key={pkg.id}
                 className="relative bg-white bg-opacity-90 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"
                 style={{
-                  backgroundImage: 'url(/kulhudhufushidive.mv/images/backgrounds/BG5.jpg)',
+                  backgroundImage: 'url(/images/backgrounds/BG5.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
@@ -310,7 +309,7 @@ const Services = () => {
                 key={course.id}
                 className="relative bg-white bg-opacity-90 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 group cursor-pointer"
                 style={{
-                  backgroundImage: 'url(/kulhudhufushidive.mv/images/backgrounds/BG4.jpg)',
+                  backgroundImage: 'url(/images/backgrounds/BG4.jpg)',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
@@ -361,11 +360,10 @@ const Services = () => {
           {/* Background Image */}
           <div className="absolute inset-0 rounded-2xl overflow-hidden z-0 bg-blue-950">
             <Image 
-              src="images/backgrounds/BG1.jpg" 
+              src="/images/backgrounds/BG1.jpg" 
               alt="Ready to dive background"
               fill
               className="object-cover"
-              unoptimized
             />
           </div>
           

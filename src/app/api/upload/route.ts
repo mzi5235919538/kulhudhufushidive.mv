@@ -2,10 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { writeFile, unlink } from 'fs/promises';
 import { join } from 'path';
 
-// Configure for static export
-export const dynamic = 'force-static';
-export const revalidate = false;
-
 export async function POST(request: NextRequest) {
   try {
     const data = await request.formData();

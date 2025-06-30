@@ -1,26 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable static export for GitHub Pages
-  output: 'export',
-  
-  // Disable image optimization for static export
+  // Standard Next.js configuration for Vercel
   images: {
-    unoptimized: true,
+    unoptimized: false, // Enable image optimization on Vercel
   },
   
-  // Set base path for GitHub Pages subdirectory deployment
-  basePath: '/kulhudhufushidive.mv',
-  
-  // Set asset prefix to match base path
-  assetPrefix: '/kulhudhufushidive.mv',
-  
-  // Ensure trailing slash for GitHub Pages
-  trailingSlash: true,
-  
-  // Disable server-side features for static export
+  // Enable server-side features for Vercel
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 };
 

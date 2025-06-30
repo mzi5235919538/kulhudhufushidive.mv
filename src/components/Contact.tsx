@@ -107,30 +107,25 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // For GitHub Pages deployment, use mailto as fallback
-      // In production, you can replace this with a service like Formspree, Netlify Forms, or EmailJS
-      
-      const subject = encodeURIComponent(`Contact from ${formData.name} - ${formData.service}`);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone}\n` +
-        `Service: ${formData.service}\n\n` +
-        `Message:\n${formData.message}`
-      );
-      
-      const mailtoUrl = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
-      
-      // Open default email client
-      window.location.href = mailtoUrl;
-      
-      // Reset form and show success message
-      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-      alert('Thank you for your message! Your email client will open to send the message.');
-      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
+        alert('Thank you for your message! We will get back to you soon.');
+      } else {
+        alert(`Error: ${result.error || 'Failed to send message'}`);
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Failed to open email client. Please contact us directly at ' + contactInfo.email);
+      alert('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -151,11 +146,10 @@ const Contact = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="images/backgrounds/BG2.jpg" 
+          src="/images/backgrounds/BG2.jpg" 
           alt="Contact us background"
           fill
           className="object-cover"
-          unoptimized
         />
       </div>
       

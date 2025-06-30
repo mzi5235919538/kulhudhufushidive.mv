@@ -9,8 +9,11 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   
-  // Set base path if deploying to a subdirectory (optional)
-  // basePath: '/kulhudhufushidive',
+  // Set base path for GitHub Pages subdirectory deployment
+  basePath: '/kulhudhufushidive.mv',
+  
+  // Set asset prefix to match base path
+  assetPrefix: '/kulhudhufushidive.mv',
   
   // Ensure trailing slash for GitHub Pages
   trailingSlash: true,

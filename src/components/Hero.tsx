@@ -68,22 +68,22 @@ const Hero = () => {
   useEffect(() => {
     const defaultImages: CarouselImage[] = [
       {
-        src: '/images/media/Hero3.jpg',
+        src: 'images/media/Hero3.jpg',
         alt: 'Diving Experience 1',
         title: 'Professional Diving'
       },
       {
-        src: '/images/media/Hero4.jpg',
+        src: 'images/media/Hero4.jpg',
         alt: 'Diving Experience 2',
         title: 'Underwater Adventure'
       },
       {
-        src: '/images/media/Hero1.jpg',
+        src: 'images/media/Hero1.jpg',
         alt: 'Diving Experience 3',
         title: 'Ocean Exploration'
       },
       {
-        src: '/images/media/Hero2.jpg',
+        src: 'images/media/Hero2.jpg',
         alt: 'Diving Experience 4',
         title: 'Marine Life Discovery'
       }

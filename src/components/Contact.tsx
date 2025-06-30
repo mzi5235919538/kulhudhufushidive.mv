@@ -151,7 +151,7 @@ const Contact = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/backgrounds/BG2.jpg" 
+          src="images/backgrounds/BG2.jpg" 
           alt="Contact us background"
           fill
           className="object-cover"

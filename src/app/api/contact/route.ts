@@ -3,6 +3,10 @@ import { writeFile, readFile } from 'fs/promises';
 import { join } from 'path';
 import { existsSync } from 'fs';
 
+// Configure for static export
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 interface ContactMessage {
   id: string;
   name: string;

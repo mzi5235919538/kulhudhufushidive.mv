@@ -244,48 +244,21 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onClose, onPreview }) => {
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files) {
-      const filesArray = Array.from(files);
+      // For GitHub Pages deployment, file upload is not supported
+      // Show a message instead of attempting upload
+      alert('File upload is not available in GitHub Pages deployment. Please use direct image URLs or deploy to a server with upload capabilities.');
       
-      // Process all files and upload them to the server
-      const newImages: Array<{id: number, url: string, name: string, isInCarousel: boolean, filename: string}> = [];
-      
-      for (const file of filesArray) {
-        try {
-          const formData = new FormData();
-          formData.append('file', file);
-          
-          const response = await fetch('/api/upload', {
-            method: 'POST',
-            body: formData,
-          });
-          
-          const result = await response.json();
-          
-          if (result.success) {
-            const newImage = {
-              id: Date.now() + Math.random(), // Unique ID
-              url: result.url,
-              name: result.originalName,
-              filename: result.filename,
-              isInCarousel: false
-            };
-            newImages.push(newImage);
-          } else {
-            console.error('Upload failed:', result.error);
-            alert(`Failed to upload ${file.name}: ${result.error}`);
-          }
-        } catch (error) {
-          console.error('Upload error:', error);
-          alert(`Failed to upload ${file.name}`);
-        }
+      // Clear the input
+      if (event && event.target) {
+        (event.target as HTMLInputElement).value = '';
       }
-      
-      if (newImages.length > 0) {
-        setUploadedImages(prev => [...prev, ...newImages]);
-      }
+      return;
     }
+    
     // Clear the input to allow re-uploading the same files
-    event.target.value = '';
+    if (event && event.target) {
+      (event.target as HTMLInputElement).value = '';
+    }
   };
 
   const toggleCarouselImage = (imageId: number) => {

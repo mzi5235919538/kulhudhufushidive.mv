@@ -68,6 +68,27 @@ src/
 - Media library for images
 - Site settings and configuration
 
+## Deployment
+
+### GitHub Pages (Automatic)
+This repository is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+**Setup Steps:**
+1. Fork or clone this repository
+2. Go to your repository Settings → Pages
+3. Set Source to "GitHub Actions"
+4. Push any changes to the `main` branch
+5. The site will automatically build and deploy
+
+**Live URL:** Your site will be available at `https://yourusername.github.io/kulhudhufushidive/`
+
+### Manual Deployment
+For other hosting platforms:
+```bash
+npm run build
+# Upload the 'out' folder to your hosting provider
+```
+
 ## Getting Started
 
 1. **Install dependencies**:
